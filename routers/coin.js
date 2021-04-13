@@ -53,6 +53,23 @@ router.get("/users/:userId/coins", async (req, res, next) => {
 });
 
 
+router.delete(
+  "/:coinId",
+  async (req, res, next) => {
+    try {
+      const coinId = parseInt(req.params.coinId);
+      const coinById = await Coin.findByPk(coinId);
+      if (!coinById) {
+        res.status(404).send({ message: "Coin not found" });
+      } else {
+        await coinById.destroy();
+        res.status(204).send({ message: "Coin deleted" });
+      }
+    } catch (error) {
+      next(error.message);
+    }
+  }
+);
 
 
 module.exports = router;
