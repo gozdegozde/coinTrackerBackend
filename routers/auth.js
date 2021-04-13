@@ -75,19 +75,20 @@ router.get("/me", authMiddleware, async (req, res) => {
 });
 
 router.post("/addcoin", authMiddleware, async(req, res) => {
-  const { name, ticker, price, logoUrl, amount, userId, coinId } = req.body
+  const { name,ticker, price, logoUrl, userId, coinId,amount } = req.body
   
   const coin = await Coin.create({
     name: name,
     ticker: ticker,
     price: price,
-    logoUrl: logoUrl,
+    logoUrl: logoUrl
    
   })
   const addCoin = await UserCoin.create({
-      amount: 1,
+      
       userId: userId,
-      coinId: coin.id
+      coinId: coin.id,
+      amount:amount
   })
 
   return res.status(201).send({ message: "Coins Created", coin,addCoin})

@@ -2,6 +2,7 @@ const express = require("express");
 const User = require("../models").user;
 // const Reservation = require("../models").reservation;
 const Coin = require("../models").coin
+const UserCoin = require("../models").userCoin
 const { Router } = express;
 const { toJWT } = require("../auth/jwt");
 
@@ -35,8 +36,12 @@ router.get("/users/:userId/coins", async (req, res, next) => {
   try {
     const userId = parseInt(req.params.userId);
     const user = await User.findByPk(userId, {
-      include: [Coin],
+     include: {
+    model: Coin,
+    through: { attributes: ["amount", "userId", "coinId"] } 
+  }
     });
+    console.log("USER", user.coins[0])
     if (user) {
       res.send(user.coins);
     } else {
@@ -46,6 +51,8 @@ router.get("/users/:userId/coins", async (req, res, next) => {
     next(e);
   }
 });
+
+
 
 
 module.exports = router;
