@@ -3,6 +3,8 @@ const { Router } = require("express");
 const { toJWT } = require("../auth/jwt");
 const authMiddleware = require("../auth/middleware");
 const User = require("../models/").user;
+const Coin = require("../models").coin
+const UserCoin = require("../models").userCoin
 const { SALT_ROUNDS } = require("../config/constants");
 
 const router = new Router();
@@ -17,7 +19,7 @@ router.post("/login", async (req, res, next) => {
         .send({ message: "Please provide both email and password" });
     }
 
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { email }, include: [ Coin] });
 
     if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.status(400).send({
@@ -71,5 +73,26 @@ router.get("/me", authMiddleware, async (req, res) => {
   delete req.user.dataValues["password"];
   res.status(200).send({ ...req.user.dataValues });
 });
+
+router.post("/addcoin", authMiddleware, async(req, res) => {
+  const { name, ticker, price, logoUrl, amount, userId, coinId } = req.body
+  
+  const coin = await Coin.create({
+    name: name,
+    ticker: ticker,
+    price: price,
+    logoUrl: logoUrl,
+   
+  })
+  const addCoin = await UserCoin.create({
+      amount: 1,
+      userId: userId,
+      coinId: coin.id
+  })
+
+  return res.status(201).send({ message: "Coins Created", coin,addCoin})
+
+
+})
 
 module.exports = router;
