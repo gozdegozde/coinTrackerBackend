@@ -54,7 +54,7 @@ router.get("/users/:userId/coins", async (req, res, next) => {
 
 
 router.delete(
-  "/:coinId",
+  "/users/:userId/coins/:coinId",
   async (req, res, next) => {
     try {
       const coinId = parseInt(req.params.coinId);
