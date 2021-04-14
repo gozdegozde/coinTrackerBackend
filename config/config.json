@@ -19,5 +19,6 @@
       "ssl": {
         "rejectUnauthorized": false
       }
+    }
   }
 }
