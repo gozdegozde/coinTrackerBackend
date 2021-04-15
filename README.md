@@ -40,15 +40,13 @@ Go to
 
 ## Database Model
 
-Go to Dbdiagram [https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2]
+[Go to Dbdiagram](https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2)
 
 ## Wireframe
 
-Go to  Wireframe [https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2]
+[Go to  Wireframe](https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2)
 
-To demo making request to this server, bash commands are included that make requests using `httpie`
 
-They can found in [./sampleRequests/httpie.md](./sampleRequests/httpie.md)
 
 ## History of this project
 
