@@ -40,19 +40,9 @@ Go to
 
 ## Database Model
 
-[Go to Dbdiagram](https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2)
+Go to [Dbdiagram](https://dbdiagram.io/d/606b1466ecb54e10c33ebb34)
 
 ## Wireframe
 
-[Go to  Wireframe](https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2)
+Go to  [Wireframe](https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2)
 
-
-
-## History of this project
-
-- [Setup of the server](https://github.com/Codaisseur/express-template/commit/cd2f790fbab6c561300163466a074fd09a35f704)
-- [Adding a README](https://github.com/Codaisseur/express-template/pull/1)
-- [Setting up the Database](https://github.com/Codaisseur/express-template/pull/2)
-- [Signup, Login & auth middleware](https://github.com/Codaisseur/express-template/pull/3)
-- [Configure cors](https://github.com/Codaisseur/express-template/pull/4)
-- [Seed using models & add delay middleware](https://github.com/Codaisseur/express-template/pull/5)
