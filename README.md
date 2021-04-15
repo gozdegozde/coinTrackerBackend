@@ -1,4 +1,4 @@
-# Coin Tracker Backend
+# COIN TRACKER
 
 This is a platform for tracking your coins and see the details of everything about all cryptocurrencies.
 
@@ -29,14 +29,23 @@ This is a platform for tracking your coins and see the details of everything abo
 - As a user I want to see total amount that I have.
 - As a user I want to be able to delete the coin that I don't want to track anymore.
 
+## I used in this project
+
+- ReactJs
+- Redux
+- Express
+- REST API
+- Sequelize as ORM
+- Many-to-many models 
+- Bootstrap
 
 ## Project Frontend Board
 
-Go to
+Go to [Frontend](https://github.com/gozdegozde/coinTrackerFrontend)
 
 ## Project Backend Board
 
-Go to
+Go to [Backend](https://github.com/gozdegozde/coinTrackerBackend/)
 
 ## Database Model
 
