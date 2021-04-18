@@ -1,142 +1,57 @@
-# Server template
+# COIN TRACKER
 
-This is a simple server template to for my students to start projects quickly.
+This is a platform for tracking your coins and see the details of everything about all cryptocurrencies.
 
-## Table of contents:
+## This platform helps you:
 
-- **[Setup](#setup-how-to-use-this-template)**
-- **[Endpoints](#endpoints)**
-- **[Sample requests with axios](#sample-requests-with-axios)**
-- **[Sample requests with httpie](#sample-requests-with-httpie)**
-- **[History of this project (pullrequests)](#history-of-this-project)**
-
-## SETUP How to use this template
-
-1. Create a new project based on this template using the `Use this template` button
-
-![HOW_TO_USE](https://user-images.githubusercontent.com/20372832/77003323-70966180-695d-11ea-8abe-b362d57135f3.gif)
-
-2. Clone the app
-
-```
-git clone git@github.com:YOUR_GITHUB_NAME/YOUR_PROJECT_NAME.git
-```
-
-3. cd into your project
-
-```
-cd YOUR_PROJECT_NAME
-```
-
-4. install dependencies
-
-```
-npm install
-```
-
-5. Configure your database in `config/config.json`
-
-Default config is setup for usage with an ElephantSQL database instance, you need to provide the DB Url on the "url" key of the config.json file, key development.
-
-```json
-// config/config.json
-{
-  "development": {
-    "url": "YOUR_ELEPHANTSQL_URL_HERE",
-    "dialect": "postgres",
-    "operatorsAliases": "0"
-  },
-}
-```
+- **See all coins **
+- **Add the coins in your portfolio that you want to track**
+- **Add the coins in your portfolio that you bought**
+- **See the total dollar equivalent of the coins you have bought**
 
 
-If planning to use this template with a docker database the config object should be changed to:
+## Goals for this project
 
-```json
-// config/config.json
-{
-  "development": {
-    "username": "postgres",
-    "password": "secret",
-    "database": "YOUR_PROJECT_NAME_HERE_development",
-    "host": "localhost",
-    "dialect": "postgres",
-    "operatorsAliases": "0"
-  }
-}
-```
-
-And you must revert the changes on this line in models/index.js: https://github.com/Codaisseur/express-template/commit/ada7711c8b19c8f240bc61f94743213efe4a77d2#diff-18c449caa39363f82bacb4f7489e7783L15
+1. To build a fullstack app, practicing all technologies that I learnt.
+2. Explore new things on my own
+3. Using some applications for documents 
+  - https://mockflow.com/app/#Wireframe
+  - https://dbdiagram.io/
+4. Get used to use github and git flow
 
 
-6. Create database, run migrations & seed data
+## User Story
 
-`package.json` contains a script for this
+- As a user I want to see all currencies.
+- As a user I want to be able to create an account.
+- As a user I want to track all coins that I want.
+- As a user I want to add an amount of coin that I bought.
+- As a user I want to see total amount that I have.
+- As a user I want to be able to delete the coin that I don't want to track anymore.
 
-```bash
-npm run initdev
-```
+## I used in this project
 
-Or run the commands seperately
+- ReactJs
+- Redux
+- Express
+- REST API
+- Sequelize as ORM
+- Many-to-many models 
+- Bootstrap
 
-```bash
-npx sequelize-cli db:migrate
-npx sequelize-cli db:seed:all
-```
+## Project Frontend Board
 
-7. start server with `nodemon` (recommended for development)
+Go to [Frontend](https://github.com/gozdegozde/coinTrackerFrontend)
 
-```
-npm run dev
-```
+## Project Backend Board
 
-8. or start normally
+Go to [Backend](https://github.com/gozdegozde/coinTrackerBackend/)
 
-```
-npm start
-```
+## Database Model
 
-## Endpoints
+Go to [Dbdiagram](https://dbdiagram.io/d/606b1466ecb54e10c33ebb34)
 
-| Method | Path                       | Purpose                             | required parameters   | auth |
-| ------ | -------------------------- | ----------------------------------- | --------------------- | ---- |
-| GET    | '/'                        | Test if your server is running      | none                  | no   |
-| POST   | '/echo'                    | Test POST requests                  | none                  | no   |
-| POST   | '/signup'                  | Create a new user and get a token   | email, name, password | no   |
-| POST   | '/login'                   | Get a token with email & password   | email, password       | no   |
-| GET    | '/me'                      | Get information of this user        | none                  | yes  |
-| POST   | '/authorized_post_request' | Test POST requests (token required) | none                  | yes  |
+## Wireframe
 
-## Sample requests with axios
+Go to  [Wireframe](https://wireframepro.mockflow.com/view/M0068e0c20b41393d50806de1cc1952121617354841557#/page/c66616cae69d4525bc318daa632fd2a2)
 
-To demo making request to this server, some small script are included that make requests using `axios`
-
-The scripts can be found in [/sampleRequests](./sampleRequests)
-
-1. Make sure to follow the the setup in this readme first
-2. cd sampleRequests
-3. Run example requests
-
-```
-node hello.js
-node echo.js
-node signup.js
-node login.js
-node me.js
-node authorizedPost.js
-```
-
-## Sample requests with httpie
-
-To demo making request to this server, bash commands are included that make requests using `httpie`
-
-They can found in [./sampleRequests/httpie.md](./sampleRequests/httpie.md)
-
-## History of this project
-
-- [Setup of the server](https://github.com/Codaisseur/express-template/commit/cd2f790fbab6c561300163466a074fd09a35f704)
-- [Adding a README](https://github.com/Codaisseur/express-template/pull/1)
-- [Setting up the Database](https://github.com/Codaisseur/express-template/pull/2)
-- [Signup, Login & auth middleware](https://github.com/Codaisseur/express-template/pull/3)
-- [Configure cors](https://github.com/Codaisseur/express-template/pull/4)
-- [Seed using models & add delay middleware](https://github.com/Codaisseur/express-template/pull/5)
