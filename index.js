@@ -33,7 +33,7 @@ const app = express();
  */
 
 const cors = require("cors");
-app.use(cors({origin: 'https://track-your-coins.herokuapp.com'}));
+app.use(cors("*"));
 
 /**
  * morgan:
