@@ -7,7 +7,7 @@ const authMiddleWare = require("./auth/middleware");
 const userRouter = require("./routers/user")
 const coinRouter = require("./routers/coin")
 const app = express();
-
+const request = require('request')
 /**
  * Middlewares
  *
@@ -33,7 +33,10 @@ const app = express();
  */
 
 const cors = require("cors");
-app.use(cors("*"));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 /**
  * morgan:

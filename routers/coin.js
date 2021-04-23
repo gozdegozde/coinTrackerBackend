@@ -71,5 +71,21 @@ router.delete(
   }
 );
 
+// //at terminal http PUT :4000/users/1 name="Andreia"
+// router.put("/:userId", async (req, res, next) => {
+//   try {
+//     const userId = parseInt(req.params.userId);
+//     const userToUpdate = await User.findByPk(userId);
+//     if (!userToUpdate) {
+//       res.status(404).send("User not found");
+//     } else {
+//       const updatedUser = await userToUpdate.update(req.body);
+//       console.log(`UPDATE USER`, updatedUser);
+//       res.json(updatedUser);
+//     }
+//   } catch (e) {
+//     next(e);
+//   }
+// });
 
 module.exports = router;
