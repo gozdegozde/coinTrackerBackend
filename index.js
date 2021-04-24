@@ -34,24 +34,15 @@ const app = express();
 
 const cors = require("cors");
 //app.use(cors("*"));
-app.use(cors("https://coinntracker.netlify.app"));
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
-// app.get('/jokes/random', (req, res) => {
-//   request(
-//     { url: "https://coinntracker.netlify.app" },
-//     (error, response, body) => {
-//       if (error || response.statusCode !== 200) {
-//         return res.status(500).json({ type: 'error', message: err.message });
-//       }
-
-//       res.json(JSON.parse(body));
-//     }
-//   )
-// });
 
 
 /**
