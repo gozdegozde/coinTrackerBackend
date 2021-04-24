@@ -3,7 +3,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 app.use(cors({
-  origin: "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD"
+  origin: "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD",
+  credentials: false,
 }));
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
