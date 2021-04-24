@@ -1,16 +1,18 @@
 
 const express = require("express");
 const app = express();
-// const cors = require("cors");
-// app.use(cors());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+const cors = require("cors");
+app.use(cors({
+  origin: "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD"
+}));
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 const loggerMiddleWare = require("morgan");
 const { PORT } = require("./config/constants");
