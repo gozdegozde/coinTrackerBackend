@@ -1,12 +1,24 @@
 
 const express = require("express");
+const app = express();
+const cors = require("cors");
+app.use(cors());
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
+
 const loggerMiddleWare = require("morgan");
 const { PORT } = require("./config/constants");
 const authRouter = require("./routers/auth");
 const authMiddleWare = require("./auth/middleware");
 const userRouter = require("./routers/user")
 const coinRouter = require("./routers/coin")
-const app = express();
+
 
 /**
  * Middlewares
@@ -31,17 +43,6 @@ const app = express();
  * docs: https://expressjs.com/en/resources/middleware/cors.html
  *
  */
-
-const cors = require("cors");
-//app.use(cors("*"));
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://api.nomics.com/v1/currencies/ticker?key=39229126e722ab40066b13018df86143&convert=USD");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
 
 
