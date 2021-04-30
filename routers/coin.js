@@ -38,7 +38,8 @@ router.get("/users/:userId/coins", async (req, res, next) => {
     const user = await User.findByPk(userId, {
      include: {
     model: Coin,
-    through: { attributes: ["amount", "userId", "coinId"] } 
+    through: { attributes: ["amount", "userId", "coinId"],
+    order: [["date", "ASC"]] } 
   }
     });
     console.log("USER", user.coins[0])
